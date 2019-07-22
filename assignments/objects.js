@@ -73,6 +73,8 @@ console.log(internThree.email)
 console.log(internFour.firstName)
 // Antonietta's Gender
 console.log(internFive.gender)
+
+
 // ==== Challenge 3: Object Methods ==== 
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 // console.log(kennan.speak());
@@ -97,17 +99,30 @@ const parent = {
   speak : function() {
     return 'Quiet Please, the parent is talking! .^_^.';
   },
+  sayName : function() {
+    return this.name;
+  },
+
   child: {
     'name': 'George',
     'age': 50,
     speak : function() {
       return 'I may be a child but I have something to say! .^_^.';
     },
+
+    sayName : function() {
+      return this.name;
+    },
+
     grandchild: {
       'name': 'Sam',
       'age': 30,
       speak: function() {
         return 'Goo-Goo, Gaa-Gaa! ..^_^..';
+      },
+
+      sayName : function() {
+        return this.name;
       },
     }
   }
@@ -121,7 +136,31 @@ console.log(parent.child.age);
 console.log(parent.child.grandchild.name + ' ' + parent.child.grandchild.age);
 // Have the parent speak
 console.log(parent.speak());
+console.log(parent.sayName());
 // Have the child speak
 console.log(parent.child.speak());
+console.log(parent.child.sayName());
 // Have the grandchild speak
 console.log(parent.child.grandchild.speak());
+console.log(parent.child.grandchild.sayName());
+
+
+// Another way to do this ^^^
+
+
+  
+function Member(details) {
+  this.name = details.name;
+  this.age = details.age;
+  this.speak = function () {
+    return `Hi I'm ${this.name}, Nice to meet you!`;
+  }
+}
+
+  const susan = new Member ({
+    name: "susan",
+    age: 70,
+  })
+
+console.log(susan.speak);
+
