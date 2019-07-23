@@ -161,9 +161,17 @@ Member.prototype.sayName = function() {
   return `My name is ${this.name}!!`;
 }
 
-  const susie = new Member ("Susie", 70);
-  const jim = new Member ("jim", 50);
-  const kate = new Member ("kate", 30); 
+Member.prototype.aboutme = () => {return `${this.name}, and I'm ${age}, it's nice to meet you!`;}
 
-console.log(kate.speak);
+const susie = new Member ("Susie", 70);
+const jim = new Member ("jim", 50);
+const kate = new Member ("kate", 30); 
+
+console.log(susie.speak());
+console.log(kate.sayName());
+
+
+console.log(susie.aboutme(susie));
+console.log(jim.aboutme(jim));
+console.log(kate.aboutme(kate));
 
