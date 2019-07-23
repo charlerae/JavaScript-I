@@ -100,19 +100,22 @@ console.log('The Last Car put into inventory was id #' + lastCar.id + ' ' + last
 // let carModels = [inventory.slice(car_model)];
 // console.log(carModels.sort());
 
-letcarModels = [];
-inventory.forEach(function(item){
-    carModels.push(car.car_model);
-})
+let carModels = [];
+inventory.forEach(function(item) {
+   carModels.push(item.car_model);
+});
 
 console.log(carModels.sort());
 
-// ==== Challenge 4 ====  &&&&& UNDEFINED CAR YEAR &&&&&&
+// return carModels.push(car.car_model);
+
+// ==== Challenge 4 ====  
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 let carYears = [];
 inventory.forEach(function(car){
     carYears.push(car.car_year);
-})
+});
+
 console.log(carYears.sort());
 
 // ==== Challenge 5 ====
@@ -133,7 +136,7 @@ let BMWAndAudi = [];
 // Need BMW  and Audi Cars
 inventory.forEach(car => {
     if (car.car_make === "BMW"|| car.car_make === "Audi") {
-        car.push(car.car_make)
+        BMWAndAudi.push(car)
     }
 })
 

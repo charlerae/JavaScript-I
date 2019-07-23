@@ -149,18 +149,21 @@ console.log(parent.child.grandchild.sayName());
 
 
   
-function Member(details) {
-  this.name = details.name;
-  this.age = details.age;
+function Member(name, age) {
+  this.name = name;
+  this.age = age;
   this.speak = function () {
     return `Hi I'm ${this.name}, Nice to meet you!`;
   }
 }
 
-  const susan = new Member ({
-    name: "susan",
-    age: 70,
-  })
+Member.prototype.sayName = function() {
+  return `My name is ${this.name}!!`;
+}
 
-console.log(susan.speak);
+  const susie = new Member ("Susie", 70);
+  const jim = new Member ("jim", 50);
+  const kate = new Member ("kate", 30); 
+
+console.log(kate.speak);
 
